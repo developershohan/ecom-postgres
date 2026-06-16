@@ -10,9 +10,9 @@ export default async function Home() {
 
   return (
     <>
-      <br />
+      <div className="wrapper px-4 py-8">
       <ProductList title={"Product List"} data={products} />
-      <br />
+      </div>
     </>
   );
 }
