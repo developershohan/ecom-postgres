@@ -55,7 +55,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 
         <CardContent className="p-4 pt-0 flex items-center justify-between mt-auto">
-          <span className="text-xl font-bold">${product.price.toFixed(2)}</span>
+          <span className="text-xl font-bold">${product.price}</span>
           <span
             className={`text-xs font-semibold ${product.stock > 0 ? "text-emerald-600" : "text-destructive"}`}
           >
