@@ -1,13 +1,14 @@
 
 import { Button } from "@/components/ui/button";
 import ProductCard from "./product-card";
+import { Product } from "@/types";
 
 const ProductList = ({
   data,
   title,
   limit,
 }: {
-  data: any;
+  data: Product[];
   title?: string;
   limit?: number;
 }) => {
@@ -21,7 +22,7 @@ const ProductList = ({
         <Button variant="link">View All</Button>
       </div>
       <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {products.length > 0 ? products.map((product: any) => (
+        {products.length > 0 ? products.map((product: Product) => (
           <ProductCard key={product.name} product={product} />
         )) : <p>No products found</p>}
       </ul>

@@ -7,22 +7,7 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
-
-// Optional: Define a TypeScript interface for type safety instead of 'any'
-interface Product {
-  name: string;
-  slug: string;
-  category: string;
-  description: string;
-  images: string[];
-  price: number;
-  brand: string;
-  rating: number;
-  numReviews: number;
-  stock: number;
-  isFeatured: boolean;
-  banner?: string;
-}
+import { Product } from "@/types";
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
