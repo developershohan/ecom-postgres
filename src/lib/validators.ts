@@ -13,5 +13,5 @@ export const insertProductSchema = z.object({
     price: currency,
     images: z.array(z.string().url("Invalid image URL")).min(1, "Image is required"),
     isFeatured: z.boolean(),
-    isActive: z.boolean(),
+    isActive: z.boolean().optional(),
 });
