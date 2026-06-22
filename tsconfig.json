@@ -23,7 +23,8 @@
       "@components/*": ["./src/components/*"],
       "@lib/*": ["./src/lib/*"],
       "@assets/*": ["./src/assets/*"],
-      "@styles/*": ["./src/assets/styles/*"]
+      "@styles/*": ["./src/assets/styles/*"],
+      "@api/*": ["./src/app/api/*"]
     }
   },
   "include": [
@@ -33,6 +34,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/app/middleware.js"  ],
   "exclude": ["node_modules"]
 }
