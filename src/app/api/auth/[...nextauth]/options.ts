@@ -50,8 +50,8 @@ export const authOptions = {
 
         if (credentials == null) return null;
 
-        const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
+        const user = await prisma.user.findFirst({
+          where: { email: credentials.email as string },
         });
 
         if (!user) return null;
@@ -59,7 +59,7 @@ export const authOptions = {
         if (user && user.password) {
           const isPasswordValid = await compare(
             credentials.password as string,
-            user.password as string,
+            user.password,
           );
 
           if (!isPasswordValid) return null;
@@ -67,7 +67,7 @@ export const authOptions = {
           return {
             id: user.id,
             email: user.email,
-            password: user.password,
+            name: user.name,
             role: user.role,
           };
         }
