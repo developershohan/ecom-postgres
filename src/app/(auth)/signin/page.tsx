@@ -1,7 +1,6 @@
 import CredentialsSignInForm from "./credentialsSignInForm";
 import Link from "next/link";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/options";
+import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import {
   Card,
@@ -18,7 +17,7 @@ export default async function SignInPage({
 }: {
   searchParams: Promise<{ callbackUrl?: string }>;
 }) {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
   const { callbackUrl = "/" } = await searchParams;
 
   if (session) {

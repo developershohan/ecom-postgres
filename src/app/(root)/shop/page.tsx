@@ -1,17 +1,14 @@
-import {authOptions} from "@api/auth/[...nextauth]/options"
-import { getServerSession } from "next-auth"
+import { auth } from "@/auth";
 
-const ShopPage = async() => {
+const ShopPage = async () => {
+  const session = await auth();
 
-    const session = await getServerSession(authOptions)
+  return (
+    <div>
+      <h1>Shop</h1>
 
-    return (
-        <div>
-            <h1>Shop</h1>
-
-            <p>{session?.user?.email}</p>
-
-        </div>
-    )
-}
-export default ShopPage
+      <p>{session?.user?.email}</p>
+    </div>
+  );
+};
+export default ShopPage;
